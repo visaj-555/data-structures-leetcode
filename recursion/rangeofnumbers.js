@@ -1,5 +1,5 @@
 function rangeofnumbers(startNum, endNum) {
-  if (end < start) {
+  if (endNum < startNum) {
     return [];
   } else {
     const numbers = rangeofnumbers(startNum, endNum - 1);
