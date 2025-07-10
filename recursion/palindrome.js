@@ -1,17 +1,17 @@
 // Brute force appraoch
 
-function isPalindrome(num) {
-  numStr = num.toString();
-  reverseNum = numStr.split("").reverse().join("");
+// function isPalindrome(num) {
+//   numStr = num.toString();
+//   reverseNum = numStr.split("").reverse().join("");
 
-  if (num == reverseNum) {
-    return true;
-  } else {
-    return false;
-  }
-}
+//   if (num == reverseNum) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
-console.log(isPalindrome(121));
+// console.log(isPalindrome(121));
 
 // Recursive Approach
 
