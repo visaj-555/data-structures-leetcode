@@ -3,9 +3,9 @@ function BubbleSort(arr) {
     for (let j = 0; j < arr.length - i - 1; j++) {
       if (arr[j] > arr[j + 1]) {
         // Swap adjacent elements
-        let temp = arr[j]; // temp = 7
-        arr[j] = arr[j + 1]; // arr[0] = 4
-        arr[j + 1] = temp; // arr[1] = 7
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
       }
     }
   }
