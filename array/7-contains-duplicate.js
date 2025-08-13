@@ -17,3 +17,5 @@ var containsDuplicate = function (nums) {
 
   return false;
 };
+
+console.log(containsDuplicate([10, 20, 30, 40, 50]));

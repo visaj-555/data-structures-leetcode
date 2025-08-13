@@ -11,3 +11,5 @@ var runningSum = function (nums) {
   }
   return result;
 };
+
+console.log(runningSum([0, 2, 1, 5, 3, 4])); // [ 0, 2, 3, 8, 11, 15 ]

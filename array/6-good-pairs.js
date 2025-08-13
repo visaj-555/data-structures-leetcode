@@ -15,3 +15,5 @@ var numIdenticalPairs = function (nums) {
 
   return count;
 };
+
+console.log(numIdenticalPairs([10, 20, 30, 40, 40, 50]));
