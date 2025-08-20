@@ -16,4 +16,4 @@ var check = function (nums) {
   return count <= 1;
 };
 
-console.log(checkArray([3, 4, 5, 1, 2]));
+console.log(check([3, 4, 5, 1, 2]));

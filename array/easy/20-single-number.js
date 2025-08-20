@@ -15,3 +15,5 @@ function singleNumber(nums) {
     }
   }
 }
+
+console.log(singleNumber([2, 2, 1, 1, 5, 7, 7]));

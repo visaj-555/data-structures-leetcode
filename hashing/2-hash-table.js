@@ -15,6 +15,7 @@ class HashTable {
 
   set(key, value) {
     const index = this._hash(key);
+
     if (!this.table[index]) {
       this.table[index] = [];
     }
@@ -62,3 +63,11 @@ class HashTable {
     this.count = newTable.count;
   }
 }
+
+let ht = new HashTable(5);
+ht.set("cat", 5);
+ht.set("dog", 7);
+ht.set("tac", 9);
+console.log(ht.table);
+console.log(ht.get("cat"));
+console.log(ht.get("tac"));

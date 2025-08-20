@@ -3,14 +3,14 @@
  * @param {number} k
  * @return {void}
  */
-// function rotate(nums, k) {
-//   let n = nums.length;
-//   k = k % n; // Handle if k > n
+function rotate(nums, k) {
+  let n = nums.length;
+  k = k % n; // Handle if k > n
 
-//   for (let i = 0; i < k; i++) {
-//     nums.unshift(nums.pop());
-//   }
-// }
+  for (let i = 0; i < k; i++) {
+    nums.unshift(nums.pop());
+  }
+}
 
 function rotate(nums, k) {
   const n = nums.length;

@@ -1,4 +1,4 @@
-function Union(nums1, nums2) {
+function Intersection(nums1, nums2) {
   let nums3 = [];
 
   for (let i = 0; i < nums1.length; i++) {
@@ -12,7 +12,7 @@ function Union(nums1, nums2) {
 }
 
 console.log(
-  Union(
+  Intersection(
     [20, 30, 40, 10, 50, 100, 3000, 40000],
     [10, 20, 30, 50, 40, 90, 50000, 60000]
   )

@@ -24,11 +24,7 @@ function countAlphabetFrequency(str) {
   return freq;
 }
 
-console.log(
-  countAlphabetFrequency(
-    "Hello World nskdgjdshiuf kjafhiusjkbhfiusbf a fiSdgyuasfia fash"
-  )
-);
+console.log(countAlphabetFrequency("Hello World"));
 
 function getHighestAndLowestCharFreq(str) {
   const freq = {};
