@@ -1,25 +1,25 @@
 // 121 . Buy and Sell Stock
 
-// function maxProfit(prices) {
-//   let min = prices[0],
-//     max = 0;
-//   index = 0;
+function maxProfit(prices) {
+  let min = prices[0],
+    max = 0;
+  index = 0;
 
-//   for (let i = 0; i < prices.length; i++)
-//     if (min > prices[i]) {
-//       min = prices[i];
-//       index = prices.indexOf(min);
-//     }
+  for (let i = 0; i < prices.length; i++)
+    if (min > prices[i]) {
+      min = prices[i];
+      index = prices.indexOf(min);
+    }
 
-//   for (let i = index; i < prices.length; i++) {
-//     if (max < prices[i]) {
-//       max = prices[i];
-//       var profit = max - min;
-//     }
-//   }
+  for (let i = index; i < prices.length; i++) {
+    if (max < prices[i]) {
+      max = prices[i];
+      var profit = max - min;
+    }
+  }
 
-//   return profit;
-// }
+  return profit;
+}
 
 function maxProfit(prices) {
   let min_price = prices[0],
