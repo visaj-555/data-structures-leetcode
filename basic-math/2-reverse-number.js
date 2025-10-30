@@ -16,3 +16,5 @@ var reverse = function (x) {
 
   return result;
 };
+
+console.log(reverse(123));
