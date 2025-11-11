@@ -1,14 +1,18 @@
 function lowerBound(nums, x) {
   let left = 0;
-  let right = array.length - 1;
+  let right = nums.length;
 
-  while (left >= right) {
+  while (left < right) {
     let mid = Math.floor((left + right) / 2);
 
-    if (x < nums[mid]) {
-        
+    if (nums[mid] < x) {
+      left = mid + 1;
+    } else {
+      right = mid;
     }
   }
+
+  return left;
 }
 
 console.log(lowerBound([1, 2, 2, 3], 2));
