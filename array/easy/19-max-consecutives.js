@@ -1,3 +1,5 @@
+// 485. Max Consecutive Ones
+
 var findMaxConsecutiveOnes = function (nums) {
   let largestCount = 0;
   let currentCount = 0;
@@ -11,4 +13,4 @@ var findMaxConsecutiveOnes = function (nums) {
   }
   return largestCount;
 };
-console.log(findMaxConsecutiveOnes([1, 0, 1, 1, 0, 1, 1, 1])); // return 3 => 1,1,1
+console.log(findMaxConsecutiveOnes([1, 0, 1, 1, 0, 1, 1, 1]));

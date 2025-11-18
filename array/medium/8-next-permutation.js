@@ -1,3 +1,5 @@
+// 31. Next Permutation
+
 var nextPermutation = function (nums) {
   let i = nums.length - 2;
   while (i >= 0 && nums[i] >= nums[i + 1]) {

@@ -1,8 +1,4 @@
-/**
- * @param {number[]} nums
- * @param {number} n
- * @return {number[]}
- */
+// 1470. Shuffle the Array
 var shuffle = function (nums, n) {
   let a1 = nums.slice(0, n);
   let a2 = nums.slice(n, n + nums.length);
@@ -17,4 +13,4 @@ var shuffle = function (nums, n) {
   return result;
 };
 
-console.log(shuffle([10, 20, 30, 40, 50, 60], 3)); // [ 10, 40, 20, 50, 30, 60 ]
+console.log(shuffle([10, 20, 30, 40, 50, 60], 3));

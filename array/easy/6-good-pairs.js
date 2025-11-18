@@ -1,7 +1,5 @@
-/**
- * @param {number[]} nums
- * @return {number}
- */
+// 1512. Number of Good Pairs
+
 var numIdenticalPairs = function (nums) {
   let count = 0;
 

@@ -1,7 +1,5 @@
-/**
- * @param {number[]} nums
- * @return {number[]}
- */
+// 1920. Build Array from Permutation
+
 var buildArray = function (nums) {
   let ans = new Array(nums.length);
 
@@ -12,4 +10,4 @@ var buildArray = function (nums) {
   return ans;
 };
 
-console.log(buildArray([0, 2, 1, 5, 3, 4])); // [ 0, 1, 2, 4, 5, 3 ]
+console.log(buildArray([0, 2, 1, 5, 3, 4]));

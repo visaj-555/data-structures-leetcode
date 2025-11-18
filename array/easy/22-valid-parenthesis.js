@@ -1,3 +1,5 @@
+// 20. Valid Parenthesis
+
 function isValid(s) {
   const stack = [];
   const map = { ")": "(", "}": "{", "]": "[" };

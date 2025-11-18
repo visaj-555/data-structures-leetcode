@@ -1,3 +1,5 @@
+// 1. Two Sum
+
 function twoSumBrute(nums, target) {
   for (let i = 0; i < nums.length; i++) {
     for (let j = i + 1; j < nums.length; j++) {

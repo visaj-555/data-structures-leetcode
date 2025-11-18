@@ -1,3 +1,5 @@
+// 26. Remove Duplicates from Sorted Array
+
 function removeDuplicates(nums) {
   if (nums.length === 0) return 0;
 

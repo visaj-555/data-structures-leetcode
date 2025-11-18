@@ -1,3 +1,5 @@
+// 56. Merge Intervals
+
 function merge(intervals) {
   intervals.sort((a, b) => a[0] - b[0]);
 

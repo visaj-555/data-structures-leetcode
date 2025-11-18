@@ -1,7 +1,5 @@
-/**
- * @param {number[]} nums
- * @return {number[]}
- */
+// 1480. Running Sum of 1d Array
+
 var runningSum = function (nums) {
   let result = new Array(nums.length);
   let sum = 0;

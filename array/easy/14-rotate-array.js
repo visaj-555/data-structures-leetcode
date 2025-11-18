@@ -1,8 +1,5 @@
-/**
- * @param {number[]} nums
- * @param {number} k
- * @return {void}
- */
+// 189. Rotate Array
+
 function rotate(nums, k) {
   let n = nums.length;
   k = k % n; // Handle if k > n

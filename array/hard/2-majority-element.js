@@ -1,7 +1,4 @@
-/**
- * @param {number[]} nums
- * @return {number[]}
- */
+// 229. Majority Element II
 var majorityElement = function (nums) {
   const count = {};
   const threshold = Math.floor(nums.length / 3);

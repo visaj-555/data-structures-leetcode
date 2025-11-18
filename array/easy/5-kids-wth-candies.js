@@ -1,8 +1,5 @@
-/**
- * @param {number[]} candies
- * @param {number} extraCandies
- * @return {boolean[]}
- */
+// 1431. Kids With the Greatest Number of Candies
+
 var kidsWithCandies = function (candies, extraCandies) {
   const maxCandies = Math.max(...candies);
 
@@ -28,5 +25,5 @@ var kidsWithCandies = function (candies, extraCandies) {
   return result;
 };
 
-console.log(kidsWithCandies([4, 2, 1, 1, 2], 1)); // [true,false,false,false,false]
-console.log(kidsWithCandies([12, 1, 12], 10)); // [true,false,true]
+console.log(kidsWithCandies([4, 2, 1, 1, 2], 1));
+console.log(kidsWithCandies([12, 1, 12], 10));

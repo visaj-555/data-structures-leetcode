@@ -1,7 +1,5 @@
-/**
- * @param {number[][]} accounts
- * @return {number}
- */
+// 1672. Richest Customer Wealth
+
 var maximumWealth = function (accounts) {
   let maxWealth = 0;
 
