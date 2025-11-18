@@ -1,3 +1,5 @@
+// 34. Find First and Last Position of Element in Sorted Array
+
 function searchRange(nums, target) {
   return [firstPos(nums, target), lastPos(nums, target)];
 }
