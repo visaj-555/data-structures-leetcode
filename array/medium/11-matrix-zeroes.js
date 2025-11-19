@@ -1,3 +1,5 @@
+// 73. Set Matrix Zeroes
+
 function setZeroes(matrix) {
   const rows = matrix.length;
   if (rows === 0) {
