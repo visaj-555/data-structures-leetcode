@@ -28,5 +28,5 @@ function findRotationCount(nums) {
 }
 
 console.log(findRotationCount([4, 5, 6, 7, 0, 1, 2, 3]));
-console.log(findRotationCount([3, 4, 5, 1, 2]));
-console.log(findRotationCount([1, 2, 3, 4, 5]));
+// console.log(findRotationCount([3, 4, 5, 1, 2]));
+// console.log(findRotationCount([1, 2, 3, 4, 5]));
