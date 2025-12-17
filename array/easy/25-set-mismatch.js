@@ -1,22 +1,23 @@
-var findDuplicateAndMissing = function (nums) {
+var findErrorNums = function (nums) {
   let n = nums.length;
+  let freq = new Array(n + 1).fill(0);
 
-  let expectedSum = (n * (n + 1)) / 2;
-  let expectedSumOfSquares = (n * (n + 1) * (2 * n + 1)) / 6;
+  let repeated = -1;
+  let missing = -1;
 
-  let actualSum = 0;
-  let actualSumOfSquares = 0;
-
+  // Count frequency
   for (let num of nums) {
-    actualSum += num;
-    actualSumOfSquares += num * num;
+    freq[num]++;
   }
 
-  let sumDifference = actualSum - expectedSum;
-  let squareSumDifference = actualSumOfSquares - expectedSumOfSquares;
+  // Find repeated and missing
+  for (let i = 1; i <= n; i++) {
+    if (freq[i] === 2) repeated = i;
+    if (freq[i] === 0) missing = i;
+  }
 
-  let duplicate = (sumDifference + squareSumDifference / sumDifference) / 2;
-  let missing = duplicate - sumDifference;
-
-  return [duplicate, missing];
+  return [repeated, missing];
 };
+
+console.log(findErrorNums([1, 2, 2, 4]));
+console.log(findErrorNums([1, 1]));
