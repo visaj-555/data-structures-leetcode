@@ -1,3 +1,5 @@
+// 1021. Remove Outermost Parentheses
+
 function removeOuterParentheses(s) {
   let result = "";
   let balance = 0;

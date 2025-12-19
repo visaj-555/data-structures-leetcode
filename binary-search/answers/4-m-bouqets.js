@@ -1,3 +1,5 @@
+// 1482. Minimum Number of Days to Make m Bouquets
+
 var minDays = function (bloomDay, m, k) {
   if (m * k > bloomDay.length) return -1;
 
