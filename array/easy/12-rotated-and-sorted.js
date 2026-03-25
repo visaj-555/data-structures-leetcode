@@ -19,3 +19,4 @@ var check = function (nums) {
 };
 
 console.log(check([3, 4, 5, 1, 2]));
+console.log(check([2, 1, 3, 4]));
