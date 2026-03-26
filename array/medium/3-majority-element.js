@@ -1,5 +1,6 @@
 // 169. Majority Element
 
+// Brute Force
 var majorityElement = function (nums) {
   let n = nums.length;
 
@@ -16,6 +17,42 @@ var majorityElement = function (nums) {
       return nums[i];
     }
   }
+};
+
+// Better :
+
+var majorityElement = function (nums) {
+  let map = new Map();
+  let n = nums.length;
+
+  for (let num of nums) {
+    map.set(num, (map.get(num) || 0) + 1);
+
+    if (map.get(num) > Math.floor(n / 2)) {
+      return num;
+    }
+  }
+};
+
+// Optimal :  Boyer - Moore Voting Alogorithm
+
+var majorityElement = function (nums) {
+  let candidate = null;
+  let count = 0;
+
+  for (let num of nums) {
+    if (count === 0) {
+      candidate = num;
+    }
+
+    if (num === candidate) {
+      count++;
+    } else {
+      count--;
+    }
+  }
+
+  return candidate;
 };
 
 console.log(majorityElement([2, 2, 1, 1, 1, 2, 2])); // Output 2
