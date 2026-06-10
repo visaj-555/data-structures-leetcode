@@ -1,5 +1,38 @@
 //  75. Sort Colors
 
+// Counting Approach :
+
+var sortColors = function (nums) {
+  let count0 = 0;
+  let count1 = 0;
+  let count2 = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === 0) count0++;
+    else if (nums[i] === 1) count1++;
+    else count2++;
+  }
+
+  let idx = 0;
+
+  while (count0--) {
+    nums[idx] = 0;
+    idx++;
+  }
+
+  while (count1--) {
+    nums[idx] = 1;
+    idx++;
+  }
+
+  while (count2--) {
+    nums[idx] = 2;
+    idx++;
+  }
+};
+
+// Optimised Approach (Dutch National Flag Algorithm) :
+
 function sortColors(nums) {
   let low = 0,
     mid = 0,
