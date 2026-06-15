@@ -46,5 +46,22 @@ function rearrangeArray(nums) {
   return result;
 }
 
+var rearrangeArray = function (nums) {
+  let positive = 0;
+  let negative = 1;
+  let nums2 = new Array(nums.length);
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] >= 0) {
+      nums2[positive] = nums[i];
+      positive += 2;
+    } else {
+      nums2[negative] = nums[i];
+      negative += 2;
+    }
+  }
+  return nums2;
+};
+
 console.log(rearrangeArray([3, 1, -2, -5, 2, -4])); // [3,-2,1,-5,2,-4]
 console.log(rearrangeArray([-1, 1])); // [1,-1]
