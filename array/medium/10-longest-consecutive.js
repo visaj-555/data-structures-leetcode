@@ -25,27 +25,22 @@ function longestConsecutive(nums) {
 
 console.log(longestConsecutive([100, 4, 200, 1, 3, 2]));
 
-function longestConsecutiveSet(nums) {
-  if (nums.length === 0) return 0;
-
-  let numSet = new Set(nums);
+var longestConsecutive = function (nums) {
+  let set = new Set(nums);
   let longest = 0;
-
-  for (let num of numSet) {
-    if (!numSet.has(num - 1)) {
-      let currentNum = num;
-      let streak = 1;
-
-      while (numSet.has(currentNum + 1)) {
-        currentNum++;
-        streak++;
+  for (let num of set) {
+    if (!set.has(num - 1)) {
+      let current = num;
+      let length = 1;
+      while (set.has(current + 1)) {
+        current++;
+        length++;
       }
-
-      longest = Math.max(longest, streak);
+      longest = Math.max(length, longest);
     }
   }
 
   return longest;
-}
+};
 
 console.log(longestConsecutiveSet([100, 4, 200, 1, 3, 2]));
