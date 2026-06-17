@@ -25,3 +25,40 @@ var nextPermutation = function (nums) {
     right--;
   }
 };
+
+var nextPermutation = function(nums) {
+    let breakpoint = -1;
+    const n = nums.length;
+
+    // Step 1: Find breakpoint
+    for (let i = n - 2; i >= 0; i--) {
+        if (nums[i] < nums[i + 1]) {
+            breakpoint = i;
+            break;
+        }
+    }
+
+    // Step 2: If no breakpoint, reverse entire array
+    if (breakpoint === -1) {
+        nums.reverse();
+        return;
+    }
+
+    // Step 3: Find next greater element from right
+    for (let i = n - 1; i > breakpoint; i--) {
+        if (nums[i] > nums[breakpoint]) {
+            [nums[i], nums[breakpoint]] = [nums[breakpoint], nums[i]];
+            break;
+        }
+    }
+
+    // Step 4: Reverse the suffix
+    let left = breakpoint + 1;
+    let right = n - 1;
+
+    while (left < right) {
+        [nums[left], nums[right]] = [nums[right], nums[left]];
+        left++;
+        right--;
+    }
+};
