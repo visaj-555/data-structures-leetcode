@@ -3,7 +3,7 @@
 function pascalsTriangle(n) {
   let row = [1];
 
-  for (let i = 0; i <= n; i++) {
+  for (let i = 1; i <= n; i++) {
     console.log(row.join(" "));
     row = generateNextRow(row);
   }
