@@ -1,22 +1,22 @@
 // 15. 3Sum
 
 /// BRUTE FORCE
-var threeSum = function (nums) {
-  let arr = new Array();
 
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      for (let k = j + 1; k < nums.length; k++) {
-        if (nums[i] + nums[j] + nums[k] == 0) {
-          arr.push([nums[i], nums[j], nums[k]].sort((a, b) => a - b));
+var threeSum = function (nums) {
+    let resultSet = new Set();
+    let result = new Array();
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+            for (let k = j + 1; k < nums.length; k++) {
+                if (nums[i] + nums[j] + nums[k] == 0) {
+                    let triplet = [nums[i], nums[j], nums[k]];
+                    triplet.sort((a, b) => a - b);
+                    resultSet.add(triplet.join(","));
+                }
+            }
         }
-      }
     }
-  }
-  arr = arr.map(JSON.stringify);
-  arr = [...new Set(arr)];
-  arr = arr.map(JSON.parse);
-  return arr;
+    return [...resultSet].map(s => s.split(",").map(Number));
 };
 
 /// OPTIMAL
