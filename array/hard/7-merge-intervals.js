@@ -1,23 +1,23 @@
 // 56. Merge Intervals
 
-function merge(intervals) {
+var merge = function (intervals) {
+  if (intervals.length <= 1) return intervals;
   intervals.sort((a, b) => a[0] - b[0]);
+  const result = [intervals[0]];
 
-  let merged = [];
+  for (let i = 1; i < intervals.length; i++) {
+    const current = intervals[i];
+    const lastMerged = result[result.length - 1];
 
-  for (let i = 0; i < intervals.length; i++) {
-    if (merged.length === 0 || merged[merged.length - 1][1] < intervals[i][0]) {
-      merged.push(intervals[i]);
+    if (current[0] <= lastMerged[1]) {
+      lastMerged[1] = Math.max(lastMerged[1], current[1]);
     } else {
-      merged[merged.length - 1][1] = Math.max(
-        merged[merged.length - 1][1],
-        intervals[i][1]
-      );
+      result.push(current);
     }
   }
 
-  return merged;
-}
+  return result;
+};
 
 console.log(
   merge([
@@ -25,5 +25,5 @@ console.log(
     [2, 6],
     [8, 10],
     [15, 18],
-  ])
+  ]),
 );
