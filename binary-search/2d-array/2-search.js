@@ -1,22 +1,32 @@
 //  74. Search a 2D Matrix
 
+/**
+ * @param {number[][]} matrix
+ * @param {number} target
+ * @return {boolean}
+ */
 var searchMatrix = function (matrix, target) {
-  const m = matrix.length;
-  const n = matrix[0].length;
+  const rows = matrix.length;
+  const cols = matrix[0].length;
 
-  let left = 0,
-    right = m * n - 1;
+  let left = 0;
+  let right = rows * cols - 1;
 
   while (left <= right) {
     let mid = Math.floor((left + right) / 2);
-    let row = Math.floor(mid / n);
-    let col = mid % n;
 
-    let val = matrix[row][col];
+    let row = Math.floor(mid / cols);
+    let col = mid % cols;
 
-    if (val === target) return true;
-    if (val < target) left = mid + 1;
-    else right = mid - 1;
+    if (matrix[row][col] === target) {
+      return true;
+    }
+
+    if (matrix[row][col] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
   }
 
   return false;
@@ -29,8 +39,8 @@ console.log(
       [10, 11, 16, 20],
       [23, 30, 34, 60],
     ],
-    3
-  )
+    3,
+  ),
 );
 
 console.log(
@@ -40,6 +50,6 @@ console.log(
       [10, 11, 16, 20],
       [23, 30, 34, 60],
     ],
-    13
-  )
+    13,
+  ),
 );
