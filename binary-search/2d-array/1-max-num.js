@@ -1,40 +1,65 @@
-function rowWithMax1s(mat) {
-  let n = mat.length;
-  let m = mat[0].length;
-  let maxRowIndex = -1;
-  let maxCount = -1;
-  let j = m - 1;
+class Solution {
+  rowWithMax1s(arr) {
+    let bestRow = -1;
+    let maxOnes = 0;
 
-  for (let i = 0; i < n; i++) {
-    while (j >= 0 && mat[i][j] === 1) {
-      j--;
-      if (m - j - 1 > maxCount) {
-        maxCount = m - j - 1;
-        maxRowIndex = i;
+    function firstOne(row) {
+      let left = 0;
+      let right = row.length - 1;
+      let ans = -1;
+
+      while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+
+        if (row[mid] === 1) {
+          ans = mid;
+          right = mid - 1;
+        } else {
+          left = mid + 1;
+        }
+      }
+
+      return ans;
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      let index = firstOne(arr[i]);
+
+      if (index === -1) continue;
+
+      let ones = arr[i].length - index;
+
+      if (ones > maxOnes) {
+        maxOnes = ones;
+        bestRow = i;
       }
     }
-  }
 
-  return maxRowIndex;
+    return bestRow;
+  }
 }
 
+const sol = new Solution();
+
 console.log(
-  rowWithMax1s([
+  sol.rowWithMax1s([
     [1, 1, 1],
     [0, 0, 1],
     [0, 0, 0],
-  ])
+  ]),
 );
+
 console.log(
-  rowWithMax1s([
+  sol.rowWithMax1s([
     [0, 0],
     [0, 0],
-  ])
+  ]),
 );
+
 console.log(
-  rowWithMax1s([
+  sol.rowWithMax1s([
     [0, 0, 1],
     [0, 1, 1],
     [0, 1, 1],
-  ])
+  ]),
 );
