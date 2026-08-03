@@ -1,28 +1,25 @@
 // 240. Search a 2D Matrix II
 
-var searchMatrix = function (matrix, target) {
-  if (!matrix || matrix.length === 0 || matrix[0].length === 0) return false;
+var searchMatrix = function(matrix, target) {
+    const rows = matrix.length;
+    const cols = matrix[0].length;
 
-  let m = matrix.length;
-  let n = matrix[0].length;
+    let row = 0;
+    let col = cols - 1;
 
-  let left = 0,
-    right = m * n - 1;
+    while (row < rows && col >= 0) {
+        if (matrix[row][col] === target) {
+            return true;
+        }
 
-  while (left <= right) {
-    let mid = Math.floor((left + right) / 2);
-    let midValue = matrix[Math.floor(mid / n)][mid % n];
-
-    if (midValue === target) {
-      return true;
-    } else if (midValue < target) {
-      left = mid + 1;
-    } else {
-      right = mid - 1;
+        if (matrix[row][col] > target) {
+            col--;
+        } else {
+            row++;
+        }
     }
-  }
 
-  return false;
+    return false;
 };
 
 console.log(
