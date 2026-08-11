@@ -1,27 +1,27 @@
 // 151. Reverse Words in a String
 
 // Brute Force :
-var reverseWords = function (s) {
-  let str = s.split(" ");
-  let rev = [];
 
-  for (let i = str.length - 1; i >= 0; i--) {
-    if (str[i]) {
-      rev.push(str[i]);
-    }
+var reverseWords = function (s) {
+  return s.trim().split(/\s+/).reverse().join(" ");
+};
+
+// Optimised :
+
+var reverseWords = function (s) {
+  let str = s.replace(/\s+/g, " ").trim();
+  let words = str.split(" ");
+  let reversed = "";
+
+  for (let i = words.length - 1; i >= 0; i--) {
+    reversed += words[i] + " ";
   }
 
-  return rev.join(" ");
+  return reversed.trim();
 };
 
 // Simpler :
 
-function reverseWords(s) {
-  return s.trim().split(/\s+/).reverse().join(" ");
-}
-
 reverseWords("the sky is blue");
-
 reverseWords("  hello world  ");
-
 reverseWords("a good   example");
