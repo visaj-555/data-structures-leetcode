@@ -1,27 +1,25 @@
 // 3541. Find Most Frequent Vowel and Consonant
 
 var maxFreqSum = function (s) {
-    let map = {};
-
-    for (let ch of s) {
-        map[ch] = (map[ch] || 0) + 1;
-    }
-
-    let vowels = new Set(['a', 'e', 'i', 'o', 'u']);
-    let maxVowels = 0;
+    let vowels = ["a", "e", "i", "o", "u"];
+    let maxVowel = 0;
     let maxConsonant = 0;
+    const freq = {};
 
-    for (let ch in map) {
-        if (vowels.has(ch)) {
-            maxVowels = Math.max(maxVowels, map[ch]);
+    for (let i = 0; i < s.length; i++) {
+        let ch = s[i];
+
+        freq[ch] = (freq[ch] || 0) + 1;
+
+        if (vowels.includes(ch)) {
+            maxVowel = Math.max(maxVowel, freq[ch]);
         } else {
-            maxConsonant = Math.max(maxConsonant, map[ch]);
+            maxConsonant = Math.max(maxConsonant, freq[ch]);
         }
     }
 
-    return maxVowels + maxConsonant;
+    return maxVowel + maxConsonant;
 };
-       
 
 console.log(maxFreqSum("aaaaeeeiioouu")); 
 console.log(maxFreqSum("leetcode"));
