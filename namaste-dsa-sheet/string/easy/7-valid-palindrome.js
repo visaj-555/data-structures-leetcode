@@ -1,21 +1,17 @@
 // 125. Valid Palindrome
 
-// Extra Space
+// Simpler  : Brute Force
+var isPalindrome = function (s) {
+  const str = s.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
 
-function isPalindrome(str) {
-  str = str.toLowerCase();
-  let filteredString = "";
   let rev = "";
 
-  for (let i = 0; i < str.length; i++) {
-    if (str[i].match(/[a-z0-9]/i)) {
-      filteredString += str[i];
-      rev = str[i] + rev;
-    }
+  for (let i = str.length - 1; i >= 0; i--) {
+    rev += str[i];
   }
 
-  return filteredString === rev;
-}
+  return rev === str;
+};
 
 // Two Pointers
 
