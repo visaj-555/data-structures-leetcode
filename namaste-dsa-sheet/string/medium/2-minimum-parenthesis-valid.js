@@ -25,20 +25,20 @@ var minAddToMakeValid = function (s) {
 // Optimal Solution
 
 var minAddToMakeValid = function (s) {
-  let open = 0; // unmatched '('
-  let add = 0; // insertions needed
+  let openCount = 0,
+    moves = 0;
 
-  for (let char of s) {
-    if (char === "(") {
-      open++;
+  for (let c of s) {
+    if (c == "(") {
+      openCount++;
     } else {
-      if (open > 0) {
-        open--; // match with a previous '('
+      if (openCount == 0) {
+        moves++;
       } else {
-        add++; // need to add '('
+        openCount--;
       }
     }
   }
 
-  return add + open; // remaining '(' need ')'
+  return moves + openCount;
 };
