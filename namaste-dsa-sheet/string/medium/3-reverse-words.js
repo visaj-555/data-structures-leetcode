@@ -10,6 +10,18 @@ var reverseWords = function (s) {
     .join(" "); // join with single space
 };
 
+var reverseWords = function (s) {
+  let str = s.replace(/\s+/g, " ").trim();
+  let words = str.split(" ");
+  let reversed = "";
+
+  for (let i = words.length - 1; i >= 0; i--) {
+    reversed += words[i] + " ";
+  }
+
+  return reversed.trim();
+};
+
 // Optimal Solution
 
 var reverseWords = function (s) {
