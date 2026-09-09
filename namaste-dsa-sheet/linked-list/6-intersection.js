@@ -4,7 +4,7 @@ var getIntersectionNode = function (headA, headB) {
   // Brute Force :
 
   let set = new Set();
-  
+
   while (headB) {
     set.add(headB);
     headB = headB.next;
@@ -29,3 +29,27 @@ var getIntersectionNode = function (headA, headB) {
 
   return a;
 };
+
+// If else
+
+var getIntersectionNode = function (headA, headB) {
+  let a = headA;
+  let b = headB;
+
+  while (a !== b) {
+    if (a !== null) {
+      a = a.next;
+    } else {
+    }
+      a = headB;
+
+    if (b !== null) {
+      b = b.next;
+    } else {
+      b = headA;
+    }
+  }
+
+  return a;
+};
+
