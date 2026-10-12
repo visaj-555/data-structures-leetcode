@@ -13,7 +13,7 @@ var isPalindrome = function (s) {
   return rev === str;
 };
 
-// Two Pointers
+// Two Pointers : 
 
 var isPalindrome = function (s) {
   let l = 0;
@@ -40,4 +40,24 @@ var isPalindrome = function (s) {
   }
 
   return true;
+};
+
+// Clean Two Pointers Approach : 
+
+var isPalindrome = function(s) {
+    s = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+    let left = 0;
+    let right = s.length - 1;
+
+    while (left < right) {
+        if (s[left] !== s[right]) {
+            return false;
+        }
+
+        left++;
+        right--;
+    }
+
+    return true;
 };
