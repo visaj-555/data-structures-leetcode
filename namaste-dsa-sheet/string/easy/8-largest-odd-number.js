@@ -16,8 +16,8 @@ var largestOddNumber = function (s) {
 // Using for loop and slice
 
 var largestOddNumber = function (num) {
-  if (Number(num[i]) % 2 !== 0) {
-    for (let i = num.length - 1; i >= 0; i--) {
+  for (let i = num.length - 1; i >= 0; i--) {
+    if (Number(num[i]) % 2 !== 0) {
       return num.slice(0, i + 1);
     }
   }
