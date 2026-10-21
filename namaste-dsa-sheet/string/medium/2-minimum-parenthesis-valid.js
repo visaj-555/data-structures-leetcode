@@ -42,3 +42,21 @@ var minAddToMakeValid = function (s) {
 
   return moves + openCount;
 };
+
+var minAddToMakeValid = function (s) {
+  let open = 0;
+  let add = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "(") {
+      open++;
+    } else if (open > 0) {
+      open--;
+    } else {
+      add++;
+    }
+  }
+
+  add += open;
+  return add;
+};
