@@ -1,29 +1,35 @@
 // 225. Implement Stack using Queues
 
-
 // Using 2 Queues
-var MyStack = function() {
+var MyStack = function () {
   this.q1 = [];
   this.q2 = [];
 };
 
-MyStack.prototype.push = function(x) {
+MyStack.prototype.push = function (x) {
   this.q1.push(x);
 };
 
-MyStack.prototype.pop = function() {
+MyStack.prototype.pop = function () {
   let n = this.q1.length;
+
+  // Transfer all elements except the last
   for (let i = 0; i < n - 1; i++) {
     this.q2.push(this.q1.shift());
   }
+
+  // Remove the last element
   let ans = this.q1.shift();
+
+  // Swap queues
   let temp = this.q1;
   this.q1 = this.q2;
   this.q2 = temp;
+
   return ans;
 };
 
-MyStack.prototype.top = function() {
+MyStack.prototype.top = function () {
   let n = this.q1.length;
   for (let i = 0; i < n - 1; i++) {
     this.q2.push(this.q1.shift());
@@ -36,38 +42,40 @@ MyStack.prototype.top = function() {
   return front;
 };
 
-MyStack.prototype.empty = function() {
+MyStack.prototype.empty = function () {
   return this.q1.length === 0;
 };
 
-// Single Queue  
+// Single Queue
 
-var MyStack = function() {
-    this.q = []; 
+var MyStack = function () {
+  this.q = [];
 };
 
-MyStack.prototype.push = function(x) {
-    this.q.push(x);
+MyStack.prototype.push = function (x) {
+  this.q.push(x);
 };
 
-MyStack.prototype.pop = function() {
-    let n = this.q.length;
-    for (let i = 0; i < n - 1; i++) {
-        this.q.push(this.q.shift());
-    }
-    return this.q.shift();
+MyStack.prototype.pop = function () {
+  let n = this.q.length;
+
+  for (let i = 0; i < n - 1; i++) {
+    this.q.push(this.q.shift()); // ROTATION HAPPENS HERE
+  }
+
+  return this.q.shift();
 };
 
-MyStack.prototype.top = function() {
-    let n = this.q.length;
-    for (let i = 0; i < n - 1; i++) {
-        this.q.push(this.q.shift());
-    }
-    let front = this.q.shift();
-    this.q.push(front);
-    return front;
+MyStack.prototype.top = function () {
+  let n = this.q.length;
+  for (let i = 0; i < n - 1; i++) {
+    this.q.push(this.q.shift());
+  }
+  let front = this.q.shift();
+  this.q.push(front);
+  return front;
 };
 
-MyStack.prototype.empty = function() {
-    return this.q.length === 0;
+MyStack.prototype.empty = function () {
+  return this.q.length === 0;
 };
