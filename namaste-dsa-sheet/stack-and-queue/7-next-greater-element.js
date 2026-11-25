@@ -1,52 +1,49 @@
 // 496. Next Greater Element I
 
-// Easy
+// Easy - Using 2 For loops
 
-function nextGreater(arr) {
-  let n = arr.length;
-  let ans = new Array(n).fill(-1);
-  let stack = [];
+var nextGreaterElement = function (nums1, nums2) {
+  let nxtGrt = [];
 
-  for (let i = 0; i < n; i++) {
-    while (stack.length > 0 && arr[i] > arr[stack[stack.length - 1]]) {
-      let prev = stack.pop();
-      ans[prev] = arr[i];
+  for (let i = 0; i < nums1.length; i++) {
+    let index = nums2.indexOf(nums1[i]);
+    let found = false;
+
+    for (let j = index + 1; j < nums2.length; j++) {
+      if (nums2[j] > nums1[i]) {
+        nxtGrt.push(nums2[j]);
+        found = true;
+        break;
+      }
     }
 
-    stack.push(i);
+    if (!found) {
+      nxtGrt.push(-1);
+    }
   }
 
-  return ans;
-}
+  return nxtGrt;
+};
 
-
-// Optimal with Map 
+// Optimal with Map
 
 var nextGreaterElement = function (nums1, nums2) {
   let stack = [];
-  let map = {};
+  let map = new Map();
 
-  // Build next greater map
-  for (let i = nums2.length - 1; i >= 0; i--) {
-    // Remove all smaller or equal elements
-    while (stack.length > 0 && stack[stack.length - 1] <= nums2[i]) {
-      stack.pop();
-    }
-
-    // If stack is empty, no greater element
-    if (stack.length === 0) {
-      map[nums2[i]] = -1;
-    } else {
-      map[nums2[i]] = stack[stack.length - 1];
+  for (let i = 0; i < nums2.length; i++) {
+    while (stack.length > 0 && nums2[i] > stack[stack.length - 1]) {
+      let num = stack.pop();
+      map.set(num, nums2[i]);
     }
 
     stack.push(nums2[i]);
   }
 
-  // Build result array
   let result = [];
+
   for (let i = 0; i < nums1.length; i++) {
-    result.push(map[nums1[i]]);
+    result.push(map.has(nums1[i]) ? map.get(nums1[i]) : -1);
   }
 
   return result;
